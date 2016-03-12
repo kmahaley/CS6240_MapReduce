@@ -1,0 +1,42 @@
+# Configuration parameters
+
+# Number of Iterations per Configuration
+num = 1
+
+# Test Results File
+results = results.csv
+
+jar = job.jar
+
+# Local Hadoop Home
+hadoop.home = /usr/local/Cellar/hadoop/2.7.2
+
+# AWS S3 Initialization
+region = us-east-1
+check.bucket = <BUCKET PATH>
+check.input = <PROVIDE INPUT TO INPUT FILES ON CLUSTER>
+check.logs = <LOG PATH>
+delete.output = <PROVIDE PATH TO OUTPUT FOLDER ON CLUSTER>
+upload.jar = <JAR PATH IN BUCKET>
+access_key = <ACCESS KEY>
+secret_key = <SECRET KEY>
+
+# AWS EMR Cluster Configuration
+cluster.name = A5Cluster
+step.name = Step
+release.label = emr-4.2.0
+log.uri = <LOG PATH>
+service.role = EMR_DefaultRole
+job.flow.role = EMR_EC2_DefaultRole
+instance.count = 11
+keep.job.flow.alive = false
+master.instance.type = m3.2xlarge
+slave.instance.type = m3.2xlarge
+
+
+# name of the job (optional)
+name = emr-fastmedian
+# main class (required)
+main = com.assignment.A5.A5Paths
+# list of argument strings (optional)
+arguments = <INPUT_PATH> <INTER_OUTPUT> <OUTPUT_PATH> <GARBAGEVALUE>
