@@ -1,0 +1,40 @@
+# Configuration parameters 
+
+# Number of Iterations per Configuration
+num = 1
+
+# Test Results File
+results = results.csv
+
+jar = job.jar
+
+
+# AWS S3 Initialization
+region = us-east-1 
+check.bucket = s3://mapreduce
+check.input = s3://mapreduce/input
+check.logs = s3://mapreducec/logs
+delete.output = s3://mapreduce/output
+upload.jar = s3://mapreduce
+access_key = <ACCESS KEY>
+secret_key = <SECRET KEY>
+
+# AWS EMR Cluster Configuration
+cluster.name = AFiveCluster
+step.name = Step
+release.label = emr-4.2.0
+log.uri = s3://mapreduce/logs
+service.role = EMR_DefaultRole
+job.flow.role = EMR_EC2_DefaultRole
+instance.count = 10
+keep.job.flow.alive = false
+master.instance.type = m3.xlarge
+slave.instance.type = m3.xlarge
+
+
+# name of the job (optional)
+name = A7
+# main class (required)
+main = com.assignment.a7.App
+# list of argument strings (optional)
+arguments = -h s3://mapreduce/input/ s3://mapreduce/output mean
